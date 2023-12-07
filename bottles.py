@@ -15,6 +15,7 @@ class Bottles:
             f'{bottle_number.successor()} of beer on the wall.\n'
         )
 
+
 class BottleNumber:
     @staticmethod
     def given(number):
@@ -30,12 +31,11 @@ class BottleNumber:
 
         return cls(number)
 
-
     def __init__(self, number):
         self.number = number
 
     def __str__(self):
-        return self.quantity() + ' ' + self.container()
+        return f'{self.quantity()} {self.container()}'
 
     def quantity(self):
         return str(self.number)
@@ -52,6 +52,7 @@ class BottleNumber:
     def successor(self):
         return BottleNumber.given(self.number - 1)
 
+
 class BottleNumber0(BottleNumber):
     def quantity(self):
         return 'no more'
@@ -62,12 +63,14 @@ class BottleNumber0(BottleNumber):
     def successor(self):
         return BottleNumber.given(99)
 
+
 class BottleNumber1(BottleNumber):
     def container(self):
         return 'bottle'
 
     def pronoun(self):
         return 'it'
+
 
 class BottleNumber6(BottleNumber):
     def quantity(self):
